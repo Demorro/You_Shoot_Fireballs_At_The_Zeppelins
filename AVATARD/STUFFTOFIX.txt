@@ -1,0 +1,10 @@
+Stuff to fix
+
+When standing on zeppelin, make it go back to center rather than follow you or the whole pack will just wander off the map
+shooting a zeppelin while standing on it makes you rotate and be destroyed with it
+	SO : Make sure your rotation is set so you are standing up every frame(or so)
+	   : Make sure when you destroy a zeppelin you are on, you are unparented from it
+You can hit the colliders with your head or from below, 2 possible solutions
+	SO : Make the zeppelin platforms only collide on one side(the top,) not entirely sure if this is possible or if it will work
+	   : Do a complicated set up of player foot collider and zeppelin platform, making it so that only the foot collider triggers parenting, and that when it collides you are set to exactly 
+		 the top of the zeppelin platform

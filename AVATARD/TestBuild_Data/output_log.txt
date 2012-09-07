@@ -1,0 +1,21 @@
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 9.0c [nvd3dum.dll 8.17.12.9610]
+    Renderer: NVIDIA GeForce GT 530
+    Vendor:   NVIDIA
+    VRAM:     993 MB (via DXGI)
+    Caps:     Shader=30 DepthRT=1 NativeDepth=1 NativeShadow=1 DF16=0 DF24=0 INTZ=1 RAWZ=0 NULL=1 RESZ=0 SlowINTZ=0
+desktop: 1786x1014 60Hz; virtual: 1786x1014 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+Initialize engine version: 3.5.3f3
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Coding\Unity\AVATARD\TestBuild_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Coding\Unity\AVATARD\TestBuild_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Coding\Unity\AVATARD\TestBuild_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Coding\Unity\AVATARD\TestBuild_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Coding\Unity\AVATARD\TestBuild_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Coding\Unity\AVATARD\TestBuild_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Coding\Unity\AVATARD\TestBuild_Data\Managed\Assembly-UnityScript-firstpass.dll (this message is harmless)
+Loading C:\Coding\Unity\AVATARD\TestBuild_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
+- Completed reload, in  0.068 seconds
