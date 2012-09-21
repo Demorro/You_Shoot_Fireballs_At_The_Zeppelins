@@ -48,13 +48,16 @@
      <Compile Include="Assets\Scripts\DestroySoundAfterPlay.cs" />
      <Compile Include="Assets\Scripts\GUIBar.cs" />
      <Compile Include="Assets\Scripts\Missile.cs" />
+     <Compile Include="Assets\Scripts\Player\AirControllerAdjuster.cs" />
      <Compile Include="Assets\Scripts\Player\FirePowerBar.cs" />
      <Compile Include="Assets\Scripts\Player\FootColliderController.cs" />
      <Compile Include="Assets\Scripts\Player\GUICrosshair.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Player\ShootMissiles.cs" />
      <Compile Include="Assets\Scripts\RotateTowardsObject.cs" />
+     <Compile Include="Assets\Scripts\SetToTopOfPlatform.cs" />
      <Compile Include="Assets\Scripts\SpawnZeppelins.cs" />
+     <Compile Include="Assets\Scripts\SpinPropellor.cs" />
      <Compile Include="Assets\Scripts\TestAnimation.cs" />
      <Compile Include="Assets\Scripts\TriggerTrigger.cs" />
      <Compile Include="Assets\Scripts\ZeppelinController.cs" />

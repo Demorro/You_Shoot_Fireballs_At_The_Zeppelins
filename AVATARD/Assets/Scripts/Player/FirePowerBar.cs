@@ -18,6 +18,7 @@ public class FirePowerBar: MonoBehaviour {
 	public bool fromTop = true;
 	public bool fromLeft = true;
 	
+	
 	// Use this for initialization
 	void Start ()
 	{
@@ -37,6 +38,7 @@ public class FirePowerBar: MonoBehaviour {
 		{
 			barRectangle = new Rect(Screen.width - (firePower * lengthMultiplyer) - xOffset,Screen.height - yOffset -height,firePower * lengthMultiplyer,height);
 		}
+
 	}
 	
 	// Update is called once per frame

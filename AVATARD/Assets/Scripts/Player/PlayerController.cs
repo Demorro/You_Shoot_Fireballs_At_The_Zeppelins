@@ -5,6 +5,7 @@ public class PlayerController : MonoBehaviour {
 	
 	public float jetStrength = 100;
 	public float acceleration = 100;
+	private static float storedDecceleration;
 	public float deceleration = 100;
 	public float topSpeed = 100;
 	private float currentTopSpeed;
@@ -43,6 +44,7 @@ public class PlayerController : MonoBehaviour {
 	
 	public bool onAZeppelin = false;
 	
+	public bool debugFlying = false;
 	
 	// Use this for initialization
 	void Start () 
@@ -52,6 +54,7 @@ public class PlayerController : MonoBehaviour {
 		jetStrength *= 10;
 		acceleration *= 10;
 		deceleration *= 10;
+		storedDecceleration = deceleration;
 		topSpeed *= 10;
 		topAirSpeed *= 10;
 	 	airAcceleration *= 10;
@@ -61,6 +64,12 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{	
+		
+		if (debugFlying == true)
+		{
+			firePower = 100;
+		}
+		
 		//forward
 		if((Input.GetKey(KeyCode.W)) || (Input.GetKey(KeyCode.UpArrow)))
 		{
@@ -91,8 +100,7 @@ public class PlayerController : MonoBehaviour {
 			}
 			else if((isGrounded == false) && (transform.InverseTransformDirection(rigidbody.velocity).z > -currentTopAirSpeed * Time.deltaTime))
 			{
-				rigidbody.AddForce(-transform.forward * airAcceleration * Time.deltaTime,ForceMode.Acceleration);
-
+				rigidbody.AddForce(-transform.forward * airAcceleration * Time.deltaTime,ForceMode.Acceleration);	
 			}
 		}
 		else
@@ -113,7 +121,6 @@ public class PlayerController : MonoBehaviour {
 			else if((isGrounded == false) && (transform.InverseTransformDirection(rigidbody.velocity).x > -currentTopAirSpeed * Time.deltaTime))
 			{
 				rigidbody.AddForce(-transform.right * airAcceleration * Time.deltaTime,ForceMode.Acceleration);
-			
 			}
 		}
 		else
@@ -134,7 +141,6 @@ public class PlayerController : MonoBehaviour {
 			else if((isGrounded == false) && (transform.InverseTransformDirection(rigidbody.velocity).x < currentTopAirSpeed * Time.deltaTime))
 			{
 				rigidbody.AddForce(transform.right * airAcceleration * Time.deltaTime,ForceMode.Acceleration);
-
 			}
 		}
 		else
@@ -241,7 +247,7 @@ public class PlayerController : MonoBehaviour {
 		beRightSideUp.y = transform.rotation.eulerAngles.y;
 		beRightSideUp.z = 0;
 		
-		//This handy bit of code stores the velocity of a non rigidbody as a vector 3. Here it is used to add inheritence to the bullets.
+		//This handy bit of code stores the velocity of a non rigidbody as a vector 3. Here it is used to add inheritence to the bullets, among other important things
 		absoluteVelocity = (transform.position - lastPosition) / Time.fixedDeltaTime;
 		lastPosition = transform.position;
 		
@@ -277,6 +283,18 @@ public class PlayerController : MonoBehaviour {
 			parentAbsoluteVelocity = Vector3.zero;
 			parentLastPosition = Vector3.zero;
 		}
+		
+		//Make sure the player isnt going super duper fast
+		if(absoluteVelocity.magnitude > currentTopAirSpeed * 1.4)
+		{
+			Debug.Log("FIXING TOO MUCH SPEED");
+			deceleration = deceleration * 2;
+		}
+		else
+		{
+			//Debug.Log("TOO MUCH SPEED SHOULD BE FIXED, CHECK THE DECCELERATION, IT MIGHT BE FUCKED");
+			deceleration = storedDecceleration;
+		}
 	}
 	
 	void OnCollisionEnter(Collision collision)
@@ -293,7 +311,7 @@ public class PlayerController : MonoBehaviour {
 	//These two functions get called from FootColliderController on the footcollider which is a child of player.
 	void OnAZeppelin(Collider collider)
 	{	
-		gameObject.transform.parent = collider.gameObject.transform.parent;
+		gameObject.transform.parent = collider.gameObject.transform;
 		trackParentVelocity = true;
 		onAZeppelin = true;
 	}

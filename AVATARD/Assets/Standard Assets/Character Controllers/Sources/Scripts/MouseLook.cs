@@ -27,6 +27,8 @@ public class MouseLook : MonoBehaviour {
 
 	public float minimumY = -60F;
 	public float maximumY = 60F;
+	
+	public bool editorDebug;
 
 	float rotationY = 0F;
 
@@ -51,6 +53,7 @@ public class MouseLook : MonoBehaviour {
 			rotationY = Mathf.Clamp (rotationY, minimumY, maximumY);
 			
 			transform.localEulerAngles = new Vector3(-rotationY, transform.localEulerAngles.y, 0);
+			
 		}
 	}
 	
@@ -60,6 +63,9 @@ public class MouseLook : MonoBehaviour {
 		if (rigidbody)
 			rigidbody.freezeRotation = true;
 		
-		Screen.showCursor = false;
+		if(editorDebug == false)
+		{
+			Screen.showCursor = false;
+		}
 	}
 }

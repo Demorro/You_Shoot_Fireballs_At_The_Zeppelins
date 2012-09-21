@@ -18,4 +18,186 @@ Platform assembly: C:\Coding\Unity\AVATARD\TestBuild_Data\Managed\Assembly-CShar
 Loading C:\Coding\Unity\AVATARD\TestBuild_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
 Platform assembly: C:\Coding\Unity\AVATARD\TestBuild_Data\Managed\Assembly-UnityScript-firstpass.dll (this message is harmless)
 Loading C:\Coding\Unity\AVATARD\TestBuild_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
-- Completed reload, in  0.068 seconds
+- Completed reload, in  0.186 seconds
+(-8.6, 2.4, -3.7)
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+ShootMissiles:Update() (at C:\Coding\Unity\AVATARD\Assets\Scripts\Player\ShootMissiles.cs:34)
+ 
+(Filename: C Line: 0)
+
+(-6.3, 0.0, 2.5)
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+ShootMissiles:Update() (at C:\Coding\Unity\AVATARD\Assets\Scripts\Player\ShootMissiles.cs:34)
+ 
+(Filename: C Line: 0)
+
+(-10.6, 0.2, 3.8)
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+ShootMissiles:Update() (at C:\Coding\Unity\AVATARD\Assets\Scripts\Player\ShootMissiles.cs:34)
+ 
+(Filename: C Line: 0)
+
+(1.9, 0.0, -2.8)
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+ShootMissiles:Update() (at C:\Coding\Unity\AVATARD\Assets\Scripts\Player\ShootMissiles.cs:34)
+ 
+(Filename: C Line: 0)
+
+(1.9, 0.0, -2.8)
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+ShootMissiles:Update() (at C:\Coding\Unity\AVATARD\Assets\Scripts\Player\ShootMissiles.cs:34)
+ 
+(Filename: C Line: 0)
+
+(1.9, 0.0, -2.9)
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+ShootMissiles:Update() (at C:\Coding\Unity\AVATARD\Assets\Scripts\Player\ShootMissiles.cs:34)
+ 
+(Filename: C Line: 0)
+
+(1.8, 0.0, -2.9)
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+ShootMissiles:Update() (at C:\Coding\Unity\AVATARD\Assets\Scripts\Player\ShootMissiles.cs:34)
+ 
+(Filename: C Line: 0)
+
+(1.7, 0.0, -3.0)
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+ShootMissiles:Update() (at C:\Coding\Unity\AVATARD\Assets\Scripts\Player\ShootMissiles.cs:34)
+ 
+(Filename: C Line: 0)
+
+(1.7, 0.0, -3.0)
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+ShootMissiles:Update() (at C:\Coding\Unity\AVATARD\Assets\Scripts\Player\ShootMissiles.cs:34)
+ 
+(Filename: C Line: 0)
+
+(0.0, 0.0, 0.0)
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+ShootMissiles:Update() (at C:\Coding\Unity\AVATARD\Assets\Scripts\Player\ShootMissiles.cs:34)
+ 
+(Filename: C Line: 0)
+
+(0.0, 0.0, 0.0)
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+ShootMissiles:Update() (at C:\Coding\Unity\AVATARD\Assets\Scripts\Player\ShootMissiles.cs:34)
+ 
+(Filename: C Line: 0)
+
+(0.0, 0.0, 0.0)
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+ShootMissiles:Update() (at C:\Coding\Unity\AVATARD\Assets\Scripts\Player\ShootMissiles.cs:34)
+ 
+(Filename: C Line: 0)
+
+(0.0, 0.0, 0.0)
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+ShootMissiles:Update() (at C:\Coding\Unity\AVATARD\Assets\Scripts\Player\ShootMissiles.cs:34)
+ 
+(Filename: C Line: 0)
+
+(0.1, 0.0, -0.1)
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+ShootMissiles:Update() (at C:\Coding\Unity\AVATARD\Assets\Scripts\Player\ShootMissiles.cs:34)
+ 
+(Filename: C Line: 0)
+
+(0.1, 0.0, -0.1)
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+ShootMissiles:Update() (at C:\Coding\Unity\AVATARD\Assets\Scripts\Player\ShootMissiles.cs:34)
+ 
+(Filename: C Line: 0)
+
+(23.6, -6.4, -22.0)
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+ShootMissiles:Update() (at C:\Coding\Unity\AVATARD\Assets\Scripts\Player\ShootMissiles.cs:34)
+ 
+(Filename: C Line: 0)
+
+(26.0, -12.7, -28.0)
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+ShootMissiles:Update() (at C:\Coding\Unity\AVATARD\Assets\Scripts\Player\ShootMissiles.cs:34)
+ 
+(Filename: C Line: 0)
+
+(26.5, -19.8, -29.9)
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+ShootMissiles:Update() (at C:\Coding\Unity\AVATARD\Assets\Scripts\Player\ShootMissiles.cs:34)
+ 
+(Filename: C Line: 0)
+
+(26.4, -21.7, -29.8)
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+ShootMissiles:Update() (at C:\Coding\Unity\AVATARD\Assets\Scripts\Player\ShootMissiles.cs:34)
+ 
+(Filename: C Line: 0)
+
+(23.9, -29.4, -33.1)
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+ShootMissiles:Update() (at C:\Coding\Unity\AVATARD\Assets\Scripts\Player\ShootMissiles.cs:34)
+ 
+(Filename: C Line: 0)
+
+(0.0, 0.0, 0.0)
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+ShootMissiles:Update() (at C:\Coding\Unity\AVATARD\Assets\Scripts\Player\ShootMissiles.cs:34)
+ 
+(Filename: C Line: 0)
+
+(0.0, 0.0, 0.0)
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+ShootMissiles:Update() (at C:\Coding\Unity\AVATARD\Assets\Scripts\Player\ShootMissiles.cs:34)
+ 
+(Filename: C Line: 0)
+
+(0.0, 0.0, 0.0)
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+ShootMissiles:Update() (at C:\Coding\Unity\AVATARD\Assets\Scripts\Player\ShootMissiles.cs:34)
+ 
+(Filename: C Line: 0)
+
+(0.0, 0.0, 0.0)
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+ShootMissiles:Update() (at C:\Coding\Unity\AVATARD\Assets\Scripts\Player\ShootMissiles.cs:34)
+ 
+(Filename: C Line: 0)
+
+(0.0, 0.0, 0.0)
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+ShootMissiles:Update() (at C:\Coding\Unity\AVATARD\Assets\Scripts\Player\ShootMissiles.cs:34)
+ 
+(Filename: C Line: 0)
+
+(0.0, 0.0, 0.0)
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+ShootMissiles:Update() (at C:\Coding\Unity\AVATARD\Assets\Scripts\Player\ShootMissiles.cs:34)
+ 
+(Filename: C Line: 0)
+

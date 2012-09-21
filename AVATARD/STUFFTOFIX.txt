@@ -1,10 +1,34 @@
-Stuff to fix
+eulerangles = 0-360
 
-When standing on zeppelin, make it go back to center rather than follow you or the whole pack will just wander off the map
-shooting a zeppelin while standing on it makes you rotate and be destroyed with it
-	SO : Make sure your rotation is set so you are standing up every frame(or so)
-	   : Make sure when you destroy a zeppelin you are on, you are unparented from it
-You can hit the colliders with your head or from below, 2 possible solutions
-	SO : Make the zeppelin platforms only collide on one side(the top,) not entirely sure if this is possible or if it will work
-	   : Do a complicated set up of player foot collider and zeppelin platform, making it so that only the foot collider triggers parenting, and that when it collides you are set to exactly 
-		 the top of the zeppelin platform
+
+
+rotationInAngles = (transform.eulerangles - lastRotation)				 ((/ Time.fixedDeltaTime;) MAYBE NEEDED, SOME SORT OF TIME FACTOR WILL NEED TO BE INVOLVED I IMAGINE)
+
+	
+
+lastRotation = transform.eulerangles;
+
+HERES THE RUB, when going from 0 - 360 and 360 - 0, wut do?
+
+Turning 2 degrees per frame
+							FOR DA LEFT ONE											FOR DA RIGHT ONE
+	356			6			rotationInAngles = 2	lastRotation = 356				rotationInAngles = -2	lastRotation = 6
+	358			4			rotationInAngles = 2	lastRotation = 358				rotationInAngles = -2	lastRotation = 4
+	360			2			rotationInAngles = 2	lastRotation = 360				rotationInAngles = -2	lastRotation = 2
+	2			360			rotationInAngles = -358	lastRotation = 2				rotationInAngles = 358	lastRotation = 360
+	4			358			rotationInAngles = 2	lastRotation = 4				rotationInAngles = -2	lastRotation = 358
+	6			356			rotationInAngles = 2	lastRotation = 6				rotationInAngles = -2	lastRotation = 356
+		
+EACH FRAME
+		
+	2			-2
+		
+thus turning:
+	
+	left   &&	right
+	
+
+	
+
+	
+	

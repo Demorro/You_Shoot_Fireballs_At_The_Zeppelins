@@ -17,6 +17,7 @@ public class FootColliderController : MonoBehaviour {
 	{
 		if(collider.transform.tag == "ZeppelinPlatform")
 		{
+			Debug.Log("HELLO");
 			SendMessageUpwards("OnAZeppelin",collider);
 		}
 	}

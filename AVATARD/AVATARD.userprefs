@@ -1,6 +1,16 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player\FootColliderController.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Player\AirControllerAdjuster.cs" Line="69" Column="6" />
+      <File FileName="Assets\Scripts\Missile.cs" Line="36" Column="3" />
+      <File FileName="Assets\Standard Assets\Detonator Explosion Framework\System\DetonatorFireball.cs" Line="159" Column="3" />
+      <File FileName="Assets\Standard Assets\Detonator Explosion Framework\System\DetonatorSmoke.cs" Line="64" Column="3" />
+      <File FileName="Assets\Scripts\ZeppelinController.cs" Line="109" Column="6" />
+      <File FileName="Assets\Scripts\Player\FootColliderController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Player\PlayerController.cs" Line="298" Column="18" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
