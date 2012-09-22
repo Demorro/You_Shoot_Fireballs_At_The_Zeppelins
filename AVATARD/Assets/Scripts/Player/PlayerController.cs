@@ -284,16 +284,21 @@ public class PlayerController : MonoBehaviour {
 			parentLastPosition = Vector3.zero;
 		}
 		
+		Debug.Log(absoluteVelocity.magnitude);
 		//Make sure the player isnt going super duper fast
-		if(absoluteVelocity.magnitude > currentTopAirSpeed * 1.4)
+		if(absoluteVelocity.magnitude  > currentTopAirSpeed/25)
 		{
 			Debug.Log("FIXING TOO MUCH SPEED");
+			rigidbody.AddForce(-absoluteVelocity * deceleration/1000);
 			deceleration = deceleration * 2;
 		}
 		else
 		{
 			//Debug.Log("TOO MUCH SPEED SHOULD BE FIXED, CHECK THE DECCELERATION, IT MIGHT BE FUCKED");
-			deceleration = storedDecceleration;
+			if (deceleration != storedDecceleration)
+			{
+				deceleration = storedDecceleration;
+			}
 		}
 	}
 	
