@@ -37,10 +37,13 @@ public class ZeppelinController : MonoBehaviour {
 	private bool goingDown = false;
 	private bool goingForward = true;
 	
+	//To do with the healthBar, all of this is dealt with in ZeppelinHealthBar in the Healthbar, which is a child of this scripts gameObject
+	public float startHealth = 100;
+	public float currentHealth;
+	
 	private Quaternion targetRotation;
 	
 	private bool destroyTheColliders = false;
-	private bool unparentThePlayer = false;
 	
 
 	// Use this for initialization
@@ -51,6 +54,8 @@ public class ZeppelinController : MonoBehaviour {
 		actualVerticalHeight = verticalHeight + Random.Range(-randomVerticalHeightFactor, randomVerticalHeightFactor);
 		rigidbody.useGravity = false;
 		rigidbody.isKinematic = true;
+		
+		currentHealth = startHealth;
 		
 	}
 	
@@ -65,6 +70,12 @@ public class ZeppelinController : MonoBehaviour {
 			}
 		}
 		
+		if(currentHealth <= 0)
+		{
+			//initiate crashing
+			goingDown = true;
+			GoDown();	
+		}
 		
 	}
 	
@@ -98,35 +109,19 @@ public class ZeppelinController : MonoBehaviour {
 	{
 		ContactPoint contact = collision.contacts[0];
 		
-		if((collision.transform.tag == "Projectile") || (collision.transform.tag == "Zeppelin") || (collision.transform.tag == "Collideable"))
+		//Fireball hit
+		if(collision.transform.tag == "Projectile")
+		{
+			currentHealth -= collision.transform.GetComponent<Missile>().damage;
+		}
+		
+		if((collision.transform.tag == "Zeppelin") || (collision.transform.tag == "Collideable") || (currentHealth <= 0))
 		{
 			//initiate crashing
 			goingDown = true;
-			gameObject.layer = 0;
-			//Sets all the childen to layer 0 so they can collide while coming down
-			for(int i = 0; i < gameObject.transform.GetChildCount(); i++)
-			{
-				gameObject.transform.GetChild(i).gameObject.layer = 0;
-			}
+			currentHealth = 0;
+			GoDown();	
 			
-			rigidbody.useGravity = true;
-			GetComponent<RotateTowardsObject>().isActive = false;
-			//zeppelinModel.transform.DetachChildren();
-			//transform.Find("Player").gameObject.transform.parent = null;
-			//unparents the player from whatever playform hes on, if he is in fact on one.
-			foreach(GameObject zeppelinPlatform in zeppelinPlatforms)
-			{
-				if(zeppelinPlatform.gameObject != null) //Makes Unity Happy. I suspect unity does things out of order with the lines of the code for optisation purposes. Fair enuff.
-				{
-					if(zeppelinPlatform.transform.childCount > 0)
-					{
-						zeppelinPlatform.transform.FindChild("Player").transform.parent = null;
-					}
-				}
-			}
-			
-			destroyTheColliders = true;
-			zeppelinModel.animation.Play();
 			//if we hit anything but a fireball, we should stop trying to go forward, as the thing is in the way
 			if((collision.transform.tag == "Zeppelin") || (collision.transform.tag == "Collideable"))
 			{
@@ -172,5 +167,34 @@ public class ZeppelinController : MonoBehaviour {
 			GetComponent<RotateTowardsObject>().target = GetComponent<RotateTowardsObject>().permenantTarget;
 		}
 	}
+
 	
+	void GoDown()
+	{
+		gameObject.layer = 0;
+		//Sets all the childen to layer 0 so they can collide while coming down
+		for(int i = 0; i < gameObject.transform.GetChildCount(); i++)
+		{
+			gameObject.transform.GetChild(i).gameObject.layer = 0;
+		}
+		
+		rigidbody.useGravity = true;
+		GetComponent<RotateTowardsObject>().isActive = false;
+
+		
+		//unparents the player from whatever playform hes on, if he is in fact on one.
+		foreach(GameObject zeppelinPlatform in zeppelinPlatforms)
+		{
+			if(zeppelinPlatform.gameObject != null) //Makes Unity Happy. I suspect unity does things out of order with the lines of the code for optisation purposes. Fair enuff.
+			{
+				if(zeppelinPlatform.transform.childCount > 0)
+				{
+					zeppelinPlatform.transform.FindChild("Player").transform.parent = null;
+				}
+			}
+		}
+		
+		destroyTheColliders = true;
+		zeppelinModel.animation.Play();	
+	}
 }

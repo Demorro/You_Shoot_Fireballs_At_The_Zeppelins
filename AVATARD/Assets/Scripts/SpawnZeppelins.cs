@@ -51,6 +51,8 @@ public class SpawnZeppelins : MonoBehaviour {
 			//allZeppelins[allZeppelins.Count - 1].GetComponent<ZeppelinController>().target = target;
 			allZeppelins[allZeppelins.Count - 1].GetComponent<ZeppelinController>().spawnZeppelins = this.GetComponent<SpawnZeppelins>();
 			
+			allZeppelins[allZeppelins.Count - 1].GetComponentInChildren<LookAt>().target = target;
+			
 			
 			//This bit is for setting the heights so they dont collide, i just havnt figured out how to do it yet, so its still random
 			/*foreach(float zeppelinHeight in zeppelinHeights)

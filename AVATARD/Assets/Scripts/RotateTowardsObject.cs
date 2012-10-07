@@ -7,7 +7,6 @@ public class RotateTowardsObject : MonoBehaviour {
 	public GameObject permenantTarget;
 	public GameObject alternateTarget;
 
-	//public ZeppelinController zeppelinController;
 	
 	private Vector3 newLocation;
 	

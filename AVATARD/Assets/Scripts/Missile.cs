@@ -11,6 +11,8 @@ public class Missile: MonoBehaviour {
 	public GameObject travelSound;
 	
 	private GameObject theTravellingSound;
+	
+	public float damage = 20;
 
 	// Use this for initialization
 	void Start ()
