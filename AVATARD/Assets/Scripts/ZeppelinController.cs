@@ -37,9 +37,10 @@ public class ZeppelinController : MonoBehaviour {
 	private bool goingDown = false;
 	private bool goingForward = true;
 	
-	//To do with the healthBar, all of this is dealt with in ZeppelinHealthBar in the Healthbar, which is a child of this scripts gameObject
+	//To do with the healthBar, all of this is dealt with in "HealthBar" in the Healthbar object, which is a child of this scripts gameObject
 	public float startHealth = 100;
 	public float currentHealth;
+	public GameObject healthBar;
 	
 	private Quaternion targetRotation;
 	
@@ -113,6 +114,8 @@ public class ZeppelinController : MonoBehaviour {
 		if(collision.transform.tag == "Projectile")
 		{
 			currentHealth -= collision.transform.GetComponent<Missile>().damage;
+			healthBar.SendMessage("ChangeHealth", -collision.transform.GetComponent<Missile>().damage);
+			//healthBar.ChangeHealth(-20);
 		}
 		
 		if((collision.transform.tag == "Zeppelin") || (collision.transform.tag == "Collideable") || (currentHealth <= 0))
@@ -120,6 +123,7 @@ public class ZeppelinController : MonoBehaviour {
 			//initiate crashing
 			goingDown = true;
 			currentHealth = 0;
+			healthBar.SendMessage("ChangeHealth",currentHealth);
 			GoDown();	
 			
 			//if we hit anything but a fireball, we should stop trying to go forward, as the thing is in the way

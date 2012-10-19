@@ -31,7 +31,6 @@ public class ShootMissiles : MonoBehaviour {
 			{
 				
 				missileReference = Instantiate(missile,(transform.position + transform.forward * forwardOffset), transform.rotation) as GameObject;
-				Debug.Log(transform.parent.GetComponent<PlayerController>().absoluteVelocity);
 				missileReference.rigidbody.velocity = missileReference.rigidbody.velocity + transform.parent.GetComponent<PlayerController>().absoluteVelocity; //the absoluteVelocity bit adds inheritence
 
 				

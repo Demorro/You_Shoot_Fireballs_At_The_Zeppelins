@@ -6,7 +6,7 @@ public class HealthBar : MonoBehaviour {
 	//This all just works, in order to change the health at runtime just call ChangeHealth()
 	
 	
-	public float startHealth = 100;
+	public float startHealth;
 	private float maxHealth;
 	public float currentHealth;
 	
@@ -24,6 +24,7 @@ public class HealthBar : MonoBehaviour {
 	private float xScaler;
 	private float xChangeHolder;
 	public float healthChangeSpeed;
+	private bool healthHasChanged;
 	
 	//To do with the fade in/out effect
 	Color theColor;
@@ -33,6 +34,7 @@ public class HealthBar : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
+		startHealth = transform.parent.GetComponent<ZeppelinController>().startHealth;
 		currentHealth = startHealth;
 		maxHealth = startHealth;
 		
@@ -44,7 +46,7 @@ public class HealthBar : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () 
+	void FixedUpdate () 
 	{
 		//store the camera distance in the cameraDistance Variable
 		cameraDistance = Vector3.Distance(Camera.mainCamera.transform.position, transform.position);
@@ -68,6 +70,7 @@ public class HealthBar : MonoBehaviour {
 			//then stretch whatever the range is so it starts at 1, as in 2-4 will become 1-4, so it works.
 			//currentscalingfactor = currentscalingfactor *  1 - (max - currentPos / max - min) * (1-(1 / min));
 			//I worked this algorithm out myself, it works and makes sense, at least at the time, but god knows what sense that it? Don't touch it, it works.
+			//Scalingfactor is min, scalingfactor * 2 is max
 			multiplicationFactor = 1 - (((scalingFactor * 2) - (currentScalingFactor)) / ((scalingFactor * 2) - (scalingFactor))) * (1 - (1 / scalingFactor));
 			currentScalingFactor = currentScalingFactor * multiplicationFactor;
 			
@@ -77,25 +80,27 @@ public class HealthBar : MonoBehaviour {
 			xScaler = tempScale.x;
 
 		}
-		
+		else if(cameraDistance < closestScaleDistance)	//if we are way close to the heathBar
+		{
+			tempScale = startScale;
+			xScaler = tempScale.x;
+		}
+		else if(cameraDistance > furthestScaleDistance) //if we are way far from the healthBar
+		{
+			tempScale = startScale * (scalingFactor * 2);
+			xScaler = tempScale.x;
+		}
+		//make sure the healthbar dosent overflow off the bottom
+		if(currentHealth < 0)
+		{
+			xScaler = 0;
+		}
 		//do the x scale distance
 		tempScale.x = xScaler * (1/(maxHealth/currentHealth));
 		transform.localScale = tempScale;
 		
 		//change the health nicely
 		AdjustHealth();
-		
-		
-		if(Input.GetKeyDown(KeyCode.L))
-		{
-			ChangeHealth(10);
-		}
-		if(Input.GetKeyDown(KeyCode.P))
-		{
-			ChangeHealth(-10);
-		}
-		
-		Debug.Log(Mathf.Round(currentHealth));
 		
 		//Deals with fading
 		if((Vector3.Distance(Camera.mainCamera.transform.position, transform.position) < fadeDistance) && (theColor.a > 0))
@@ -119,15 +124,15 @@ public class HealthBar : MonoBehaviour {
 	{
 		if(currentHealth < currentHealth + xChangeHolder)
 		{
-			currentHealth += healthChangeSpeed * Time.deltaTime;
-			xChangeHolder -= healthChangeSpeed * Time.deltaTime;
+			currentHealth = currentHealth + (healthChangeSpeed);
+			xChangeHolder = currentHealth - (healthChangeSpeed);
 		}
-		if(currentHealth > currentHealth + xChangeHolder)
+		else if(currentHealth > currentHealth + xChangeHolder)
 		{
-			currentHealth -= healthChangeSpeed * Time.deltaTime;
-			xChangeHolder += healthChangeSpeed * Time.deltaTime;
+			currentHealth = currentHealth - (healthChangeSpeed);
+			xChangeHolder = xChangeHolder + (healthChangeSpeed);
 		}
-		
+
 		currentHealth = Mathf.Round(currentHealth);
 		xChangeHolder = Mathf.Round(xChangeHolder);
 	}
