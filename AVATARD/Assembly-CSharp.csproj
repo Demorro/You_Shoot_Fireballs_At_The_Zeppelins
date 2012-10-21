@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\HealthBar.cs" />
      <Compile Include="Assets\Scripts\LookAt.cs" />
      <Compile Include="Assets\Scripts\Missile.cs" />
+     <Compile Include="Assets\Scripts\OrbController.cs" />
      <Compile Include="Assets\Scripts\Player\AirControllerAdjuster.cs" />
      <Compile Include="Assets\Scripts\Player\FirePowerBar.cs" />
      <Compile Include="Assets\Scripts\Player\FootColliderController.cs" />
@@ -64,6 +65,7 @@
      <Compile Include="Assets\Scripts\SpinPropellor.cs" />
      <Compile Include="Assets\Scripts\TestAnimation.cs" />
      <Compile Include="Assets\Scripts\TriggerTrigger.cs" />
+     <Compile Include="Assets\Scripts\TurretTrack.cs" />
      <Compile Include="Assets\Scripts\ZeppelinController.cs" />
      <Compile Include="Assets\Scripts\ZeppelinPlatform.cs" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />

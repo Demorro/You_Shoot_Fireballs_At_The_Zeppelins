@@ -1,17 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\Detonator Explosion Framework\System\DetonatorSmoke.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\TurretTrack.cs">
     <Files>
-      <File FileName="Assets\Standard Assets\Detonator Explosion Framework\System\DetonatorSmoke.cs" Line="64" Column="3" />
-      <File FileName="Assets\Scripts\Player\AirControllerAdjuster.cs" Line="69" Column="6" />
-      <File FileName="Assets\Scripts\ZeppelinController.cs" Line="126" Column="54" />
-      <File FileName="Assets\Scripts\Player\FootColliderController.cs" Line="10" Column="2" />
-      <File FileName="Assets\Scripts\Player\PlayerController.cs" Line="291" Column="6" />
-      <File FileName="Assets\Scripts\LookAt.cs" Line="63" Column="173" />
-      <File FileName="Assets\Scripts\HealthBar.cs" Line="50" Column="3" />
-      <File FileName="Assets\Scripts\Player\ShootMissiles.cs" Line="33" Column="136" />
-      <File FileName="Assets\Scripts\DestroySoundAfterPlay.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\DestroyAllColliders.cs" Line="18" Column="33" />
+      <File FileName="Assets\Scripts\LookAt.cs" Line="82" Column="1" />
+      <File FileName="Assets\Scripts\TurretTrack.cs" Line="56" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
