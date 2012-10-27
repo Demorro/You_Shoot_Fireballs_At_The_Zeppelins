@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour {
 	public float permenantAirAcceleration;
 	private float currentTopAirSpeed;
 	
-	public int health = 100;
+	public float Health = 100;
 	
 	public float jumpStrength = 100;
 	
@@ -29,9 +29,6 @@ public class PlayerController : MonoBehaviour {
 	
 	private bool isGrounded = false;
 	
-	//Audio Clips
-	public AudioClip jetPackThrustSound;
-	public AudioClip jetPackFadeOut;
 	
 	//to do with absolute velocity and finding the velocity of a non rigidbody
 	private Vector3 lastPosition;
@@ -43,6 +40,14 @@ public class PlayerController : MonoBehaviour {
 	private bool applyExitVelocity = false;
 	
 	public bool onAZeppelin = false;
+	
+	//falling stuff
+	public float maxSafeFallSpeed = 15;
+	public float fallDamageMultiplyer = 1;
+	private float currentFallSpeed;
+	
+	public GameObject flyingJet;
+	Component[] jetEmitters;
 	
 	public bool debugFlying = false;
 	
@@ -59,6 +64,14 @@ public class PlayerController : MonoBehaviour {
 		topAirSpeed *= 10;
 	 	airAcceleration *= 10;
 		permenantAirAcceleration = airAcceleration;
+		
+		
+		
+		jetEmitters = flyingJet.GetComponentsInChildren<ParticleEmitter>();
+		foreach(ParticleEmitter emitter in jetEmitters)
+		{
+			emitter.emit = false;
+		}
 	}
 	
 	// Update is called once per frame
@@ -197,27 +210,43 @@ public class PlayerController : MonoBehaviour {
 				firePower = firePower - (jetDecrementFactor * Time.deltaTime)/2;
 				rechargeTimer = 0;
 				airAcceleration = permenantAirAcceleration * 2.5f;
+				
+				foreach(ParticleEmitter emitter in jetEmitters)
+				{
+					emitter.emit = true;
+				}
+				
 			}
 			else
 			{
 				airAcceleration = permenantAirAcceleration;
+				
+				foreach(ParticleEmitter emitter in jetEmitters)
+				{
+					emitter.emit = false;
+				}
 			}
 		}
 		else
 		{
 			airAcceleration = permenantAirAcceleration;
+			
+			foreach(ParticleEmitter emitter in jetEmitters)
+			{
+				emitter.emit = false;
+			}
 		}
 		//jetsound
 		if((Input.GetKeyDown(KeyCode.Mouse1)) && (firePower >= jetDecrementFactor * Time.deltaTime))
 		{
-			audio.Play();
+			SendMessage("PlayJetSound");
 		}
 		else if((Input.GetKeyUp(KeyCode.Mouse1)) || (firePower < jetDecrementFactor * Time.deltaTime))
 		{
-			audio.Stop();
-			//audio.PlayOneShot(jetPackFadeOut);
-			
+			SendMessage("StopJetSound");
+			//audio.PlayOneShot(jetPackFadeOut);	
 		}
+		
 		//If we arnt jetting or shooting fireballs, and the recharge wait has expired, recharge.
 		if(rechargeTimer > rechargeWaitTime)
 		{
@@ -300,10 +329,23 @@ public class PlayerController : MonoBehaviour {
 				deceleration = storedDecceleration;
 			}
 		}
+		
+		currentFallSpeed = Mathf.Abs(transform.rigidbody.velocity.y);
+		
+		if(currentFallSpeed > maxSafeFallSpeed)
+		{
+		}
+		
+		SendMessage("PlayFallingSound",transform.rigidbody.velocity.y);
 	}
 	
 	void OnCollisionEnter(Collision collision)
 	{
+		if((currentFallSpeed > maxSafeFallSpeed) && (collision.transform.tag == "Ground"))
+		{
+			Health -= (currentFallSpeed - maxSafeFallSpeed) * fallDamageMultiplyer;
+		}
+		
 		isGrounded = true;	
 	}
 	

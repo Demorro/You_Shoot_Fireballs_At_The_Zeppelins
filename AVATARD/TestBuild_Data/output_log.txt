@@ -8,3 +8,14 @@ Direct3D:
 desktop: 1786x1014 60Hz; virtual: 1786x1014 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
+Initialize engine version: 3.5.6f4
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Coding\Unity\AVATARD\TestBuild_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Coding\Unity\AVATARD\TestBuild_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Coding\Unity\AVATARD\TestBuild_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Coding\Unity\AVATARD\TestBuild_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Coding\Unity\AVATARD\TestBuild_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Coding\Unity\AVATARD\TestBuild_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Coding\Unity\AVATARD\TestBuild_Data\Managed\Assembly-UnityScript-firstpass.dll (this message is harmless)
+Loading C:\Coding\Unity\AVATARD\TestBuild_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
+- Completed reload, in  0.067 seconds

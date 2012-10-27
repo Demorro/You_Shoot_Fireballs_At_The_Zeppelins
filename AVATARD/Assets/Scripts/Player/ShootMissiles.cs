@@ -36,6 +36,7 @@ public class ShootMissiles : MonoBehaviour {
 				
 				ignitionSoundReference = Instantiate(ignitionSound,transform.position,transform.rotation) as GameObject;
 				ignitionSoundReference.gameObject.transform.parent = gameObject.transform;
+				
 				transform.parent.GetComponent<PlayerController>().firePower -= shootCost;
 				transform.parent.GetComponent<PlayerController>().rechargeTimer = 0;
 				
